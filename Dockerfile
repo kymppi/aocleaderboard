@@ -15,7 +15,6 @@ RUN cargo build --release && rm -rf .git src/ target/
 COPY src/ src/
 COPY templates/ templates/
 COPY LICENSE LICENSE
-COPY .git/ .git/
 
 # do a release build
 RUN cargo build --release
