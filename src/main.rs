@@ -18,7 +18,7 @@ use rocket_contrib::templates::Template;
 use std::process::exit;
 use std::sync::{Arc, RwLock};
 
-const SETTINGS_FILE: &str = "settings";
+const SETTINGS_FILE: &str = "/config/settings.toml";
 
 fn main() {
     // TODO: currently Rocket doesn't provide a nice a nice way to write
