@@ -13,7 +13,6 @@ COPY Cargo.toml Cargo.lock rust-toolchain.toml ./
 RUN cargo build --release && rm -rf .git src/ target/
 
 COPY src/ src/
-COPY templates/ templates/
 COPY LICENSE LICENSE
 
 # do a release build
@@ -24,4 +23,6 @@ RUN strip target/release/aocleaderboard
 FROM alpine:3.18
 RUN apk add --no-cache libgcc
 COPY --from=0 /aocleaderboard/target/release/aocleaderboard .
+COPY templates/ templates/
+COPY LICENSE LICENSE
 ENTRYPOINT ["/aocleaderboard"]
